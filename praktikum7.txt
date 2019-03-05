@@ -1,0 +1,12 @@
+SELECT SSN, FName, LName, PName, P.DNum, D.DNumber, D.DName
+FROM Employee E JOIN Works_On W ON E.SSN = W.ESSN
+JOIN Project P ON W.PNum = P.PNumber AND E.DNum = P.DNum
+JOIN Department D ON P.DNum = D.DNumber
+ORDER BY P.PName;
+
+
+CREATE VIEW v1 AS
+SELECT SSN, FName,LName, DNum
+FROM Employee;
+CREATE VIEW
+SELECT * FROM v1;
